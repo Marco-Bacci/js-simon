@@ -2,7 +2,7 @@
 const button = document.getElementById('message')
 const countDown = document.getElementById('countdown')
 const instructions = document.getElementById("instructions");
-const randomNumbers = document.getElementById('numbers-list')
+const randomNumList = document.getElementById('numbers-list')
 const form = document.getElementById('answers-form')
 
 
@@ -15,6 +15,8 @@ function generateRandomNumbers(){
   }
   return num
 }
+const randomNumbers = generateRandomNumbers()
+randomNumList.innerHTML = randomNumbers
 
 // definisco intervallo e controllo se i numeri sono uguali a 0 e in quel caso faccio apparire il form 
 
