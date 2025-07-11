@@ -3,7 +3,7 @@ const button = document.getElementById('message')
 const countDown = document.getElementById('countdown')
 const instructions = document.getElementById("instructions");
 const randomNumbers = document.getElementById('numbers-list')
-const form = document.getElementById('answer-form')
+const form = document.getElementById('answers-form')
 
 
 // creo una funzione che mi genera i numeri random 
@@ -18,16 +18,19 @@ function generateRandomNumbers(){
 
 // definisco intervallo e controllo se i numeri sono uguali a 0 e in quel caso faccio apparire il form 
 
-let seconds = 0
+let seconds = 10
+
 
 const intervalId = setInterval(() =>{
   countDown.innerText = seconds;
   seconds--;
   if(seconds === 0){
-    clearInterval(intervalId)
-    form.classList.remove('d-none')
+    clearInterval(intervalId)  
+    form.classList.remove('d-none') 
+    countDown.classList.add('d-none')
     instructions.innerText = 'Inserisci tutti i numeri che ricordi'
-
   }
   
 }, 1000);
+
+
