@@ -30,6 +30,8 @@ const intervalId = setInterval(() =>{
     clearInterval(intervalId)  
     form.classList.remove('d-none') 
     countDown.classList.add('d-none')
+    randomNumList.classList.add('d-none')
+    
     instructions.innerText = 'Inserisci tutti i numeri che ricordi'
   }
   
