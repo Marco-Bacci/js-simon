@@ -1,5 +1,5 @@
 // recupero elementi del dom: button per avviare la l'evento, countdown e numeri random, form, input
-const button = document.getElementById("message");
+const button = document.getElementById("button");
 const countDown = document.getElementById("countdown");
 const instructions = document.getElementById("instructions");
 const randomNumList = document.getElementById("numbers-list");
@@ -13,7 +13,6 @@ function generateRandomNumbers() {
     if(!num.includes(random)){
       num.push(random);
     }
-
 
   }
   return num;
@@ -42,3 +41,18 @@ const intervalId = setInterval(() => {
     instructions.innerText = "Inserisci tutti i numeri che ricordi";
   }
 }, 1000);
+
+// creo un evento sul bottone
+button.addEventListener(`click`, function(e)  
+{
+  e.preventDefault();
+// // richiamo gli input e il messaggio dal DOM
+const inputs = document.querySelectorAll('.form-control').value
+const message = document.getElementById('message')
+// ciclo inputs per creare un array
+const userArray = []
+ for (let i = 0; i < inputs.length; i++){
+  userArray.push(inputs[i].value)
+ }
+
+})
