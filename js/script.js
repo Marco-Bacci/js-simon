@@ -54,5 +54,12 @@ const userArray = []
  for (let i = 0; i < inputs.length; i++){
   userArray.push(inputs[i].value)
  }
+// dichiaro variabile numeri corretti e ciclo il nuovo array creato per confrontare i numeri
+let correctNum = 0;
+for (let i = 0; i < userArray.length; i++){
+  if(randomNumbers.includes(userArray[i])){
+    correctNum = correctNum + 1 ;
+  }
+}
 
 })
