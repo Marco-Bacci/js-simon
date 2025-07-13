@@ -1,5 +1,5 @@
 // recupero elementi del dom: button per avviare la l'evento, countdown e numeri random, form, input
-const button = document.getElementById("button");
+const button = document.querySelector(".btn");
 const countDown = document.getElementById("countdown");
 const instructions = document.getElementById("instructions");
 const randomNumList = document.getElementById("numbers-list");
@@ -63,6 +63,8 @@ for (let i = 0; i < userArray.length; i++){
 }
 if(correctNum == 5){
   message.innerText = 'HAI VINTO!'
+  message.classList.remove('text-danger')
+  message.classList.add('text-success')
 }
 else{
   message.innerText = `Hai indovinato ${correctNum} numero/i`
