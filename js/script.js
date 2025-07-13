@@ -47,7 +47,7 @@ button.addEventListener(`click`, function(e)
 {
   e.preventDefault();
 // // richiamo gli input e il messaggio dal DOM
-const inputs = document.querySelectorAll('.form-control').value
+const inputs = document.querySelectorAll('.form-control')
 const message = document.getElementById('message')
 // ciclo inputs per creare un array
 const userArray = []
@@ -57,9 +57,15 @@ const userArray = []
 // dichiaro variabile numeri corretti e ciclo il nuovo array creato per confrontare i numeri
 let correctNum = 0;
 for (let i = 0; i < userArray.length; i++){
-  if(randomNumbers.includes(userArray[i])){
+  if(randomNumbers.includes(parseInt(userArray[i]))){
     correctNum = correctNum + 1 ;
   }
 }
+if(correctNum == 5){
+  message.innerText = 'HAI VINTO!'
+}
+else{
+  message.innerText = `Hai indovinato ${correctNum} numero/i`
 
+}
 })
