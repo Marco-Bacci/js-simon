@@ -30,8 +30,8 @@ for (let i = 0; i < 5; i++) {
 let seconds = 10;
 
 const intervalId = setInterval(() => {
-  seconds--;
   countDown.innerText = seconds;
+  seconds--;
   if (seconds === 0) {
     clearInterval(intervalId);
     form.classList.remove("d-none");
