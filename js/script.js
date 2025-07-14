@@ -55,19 +55,21 @@ const userArray = []
   userArray.push(inputs[i].value)
  }
 // dichiaro variabile numeri corretti e ciclo il nuovo array creato per confrontare i numeri
+const correctNumbers = []
 let correctNum = 0;
 for (let i = 0; i < userArray.length; i++){
   if(randomNumbers.includes(parseInt(userArray[i]))){
+    correctNumbers.push(userArray[i])
     correctNum = correctNum + 1 ;
   }
 }
 if(correctNum == 5){
-  message.innerText = 'HAI VINTO!'
+  message.innerText = `HAI VINTO I numeri corretti sono ${correctNumbers}!`
   message.classList.remove('text-danger')
   message.classList.add('text-success')
 }
 else{
-  message.innerText = `Hai indovinato ${correctNum} numero/i`
+  message.innerText = `Hai indovinato ${correctNum} numeri: ${correctNumbers}`
 
 }
 })
